@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{% static "css/users.css" %}">
+    <title></title>
+  </head>
+  <body>
+      <h1>This is the User's Database!</h1>
+
+  {% if users_db %}
+  <table>
+    <thead>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email Address</th>
+      {% for user in users_db %}
+    </thead>
+    <tr>
+        <!-- use curly braces when template tagging and just inserting text but the % when inserting logic -->
+      <td>{{ user.fname }}</td>
+      <td>{{ user.lname }}</td>
+      <td>{{ user.email }}</td>
+    </tr>
+    {% endfor %}
+
+  </table>
+
+{% else %}
+  <strong>There are no users present!</strong>
+{% endif %}
+
+  </body>
+</html>

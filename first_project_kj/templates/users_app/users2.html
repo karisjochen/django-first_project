@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{% static "css/users.css" %}">
+    <title></title>
+  </head>
+  <body>
+      <h1>This is the User's Database!</h1>
+
+  
+  <form  method = "POST">
+    {{ form }}
+    {% csrf_token %}
+    <input type="submit" value="OK">
+</form>
+
+
+  </body>
+</html>
